@@ -9,13 +9,12 @@ document.addEventListener("DOMContentLoaded", () => {
     addToy = !addToy;
     if (addToy) {
       toyFormContainer.style.display = "block";
-      document.querySelector('.submit').addEventListener('submit', handleCreateButton)
+      document.querySelector('.add-toy-form').addEventListener('submit', handleCreateButton)
+      
     } else {
       toyFormContainer.style.display = "none";
-    }    
+    }        
   });  
-});
-
 
 function getAllToys() {
   fetch('http://localhost:3000/toys')
@@ -61,3 +60,5 @@ function addNewToy(toyObj) {
   .then(res => res.json())
   .then(data => console.log(data))
 }
+
+});
